@@ -6,7 +6,6 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.13"
@@ -29,7 +28,7 @@
 					[
 						0
 					],
-					"name" : "varecka_4",
+					"name" : "varecka_prototype",
 					"targetIndexes" : 
 					[
 						0,
@@ -57,7 +56,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Z_DUMMY_TARGET::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Z_DUMMY_TARGET-Debug-8e5fe65b75856da4e66a.json",
+					"jsonFile" : "target-Z_DUMMY_TARGET-Debug-fcc60b99d6364e591da1.json",
 					"name" : "Z_DUMMY_TARGET",
 					"projectIndex" : 0
 				}
@@ -67,12 +66,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/japaw/Codes/varecka_4/cmake-build-debug",
-		"source" : "/home/japaw/Codes/varecka_4"
+		"build" : "/home/japaw/Codes/varecka_prototype/cmake-build-debug",
+		"source" : "/home/japaw/Codes/varecka_prototype"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 4
+		"minor" : 0
 	}
 }

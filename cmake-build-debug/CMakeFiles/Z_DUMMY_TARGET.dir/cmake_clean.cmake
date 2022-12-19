@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj"
-  "CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj.d"
   "Z_DUMMY_TARGET"
   "Z_DUMMY_TARGET.pdb"
 )

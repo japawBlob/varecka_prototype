@@ -2,10 +2,14 @@
 
 #define LED1 26
 #define BUZZ 19
+#define ADD_BUTTON 27
+#define SUB_BUTTON 28
 
 void setup() {
     pinMode(LED1, OUTPUT);
     pinMode(BUZZ, OUTPUT);
+    pinMode(ADD_BUTTON, INPUT_PULLUP);
+    pinMode(SUB_BUTTON, INPUT_PULLUP);
     Serial.begin(115200);
 }
 
@@ -15,6 +19,9 @@ unsigned long now;
 unsigned long silence_time = 1000;
 unsigned long loud_time = 500;
 bool SET = false;
+unsigned add_pressed = 0;
+unsigned sub_pressed = 0;
+const unsigned debounce_time = 10;
 
 void buzz_buzz () {
     analogWrite(BUZZ, 200);
@@ -44,4 +51,34 @@ void loop() {
         SET = !SET;
         last_now = now;
     }
+    if ( digitalRead(ADD_BUTTON) == LOW && digitalRead(SUB_BUTTON) == LOW) {
+        add_pressed = 0;
+        sub_pressed = 0;
+    } else {
+
+        /// Handle ADD button
+        if ( digitalRead(ADD_BUTTON) == LOW ) {
+            add_pressed++;
+        } else {
+            add_pressed = 0;
+        }
+        if ( digitalRead(ADD_BUTTON) == LOW && add_pressed > 5 ) {
+            delay(debounce_time);
+            if ( digitalRead(ADD_BUTTON) == LOW ) {
+                silence_time += 500;
+            }
+        }
+        /// Handle SUB button
+        if ( digitalRead(SUB_BUTTON) == LOW ) {
+            sub_pressed++;
+        } else {
+            sub_pressed = 0;
+        }
+        if ( digitalRead(ADD_BUTTON) == LOW && sub_pressed > 5 ) {
+            delay(debounce_time);
+            if ( digitalRead(ADD_BUTTON) == LOW ) {
+                silence_time -= 500;
+            }
+        }
+    }    
 }
